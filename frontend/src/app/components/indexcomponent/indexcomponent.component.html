@@ -1,0 +1,33 @@
+<div class="container-fluid header">
+    <!--
+   <div class="col-md-12">
+     <button class="btn btn-default button">Get The App</button>
+   </div>
+  -->
+  <div class="row search-bar">
+    <h2>Search Word</h2>
+    <div class="input-group col-md-12">
+            <input type="text" class="form-control" [(ngModel)]="word" id="search" name="x" placeholder="Search word...">
+            <span class="input-group-btn">
+                <button class="btn btn-default" (click)="searchWord()" type="button"><span class="glyphicon glyphicon-search"></span>Search</button>
+            </span>
+        </div>
+        
+  </div>
+</div>
+<div class="container result" id="result">
+  <div class="card col-md-10" *ngIf="suggestion">
+    <div class="card-body">
+     <h4> Did You mean : <span *ngFor="let data of suggestiondata"> <a  href="#" (click)="searchSuggestion(data)"> {{data}}</a>&nbsp; </span></h4>
+    </div>
+  </div>
+  <br>
+  <div class="card col-md-12">
+<div class="card-body">
+<h4 class="card-title" >Result </h4>
+<p class="card-text" >Definition : <br> <span id="def" *ngFor="let def of definition; let i = index">{{i+1 + '. '  + def}} <br></span> </p>
+</div>
+</div>
+</div>
+
+
